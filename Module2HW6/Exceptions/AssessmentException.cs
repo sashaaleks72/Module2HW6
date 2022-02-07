@@ -4,14 +4,17 @@ namespace Module2HW6
 {
     public class AssessmentException : Exception
     {
-        public AssessmentException(string msg)
+        public AssessmentException(string msg, INotificationService notificationService)
             : base(msg)
         {
+            NotificationService = notificationService;
         }
 
-        public void PrintException(INotificationService notificationService)
+        public INotificationService NotificationService { get; set; }
+
+        public void PrintException()
         {
-            notificationService.ShowErrorMsg(Message);
+            NotificationService.ShowErrorMsg(Message);
         }
     }
 }

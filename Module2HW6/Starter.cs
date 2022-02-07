@@ -26,20 +26,12 @@ namespace Module2HW6
             {
                 AssessmentService.GiveStudentAGrade(teacher1, student1, 89m);
                 AssessmentService.GiveStudentAGrade(teacher2, student1, 91m);
-                AssessmentService.GiveStudentAGrade(curator, student1, -1m);
-            }
-            catch (AssessmentException ex)
-            {
-                ex.PrintException(NotificationService);
-            }
-
-            try
-            {
+                AssessmentService.GiveStudentAGrade(curator, student1, 10m);
                 AssessmentService.GiveStudentAGrade(teacherToShowException, student1, 99m);
             }
             catch (AssessmentException ex)
             {
-                ex.PrintException(NotificationService);
+                ex.PrintException();
             }
 
             Employee[] employees = new Employee[]

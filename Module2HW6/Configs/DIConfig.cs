@@ -8,6 +8,7 @@ namespace Module2HW6
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<NotificationService>().As<INotificationService>();
+            builder.RegisterType<AssessmentExceptionFactory>().As<IAssessmentExceptionFactory>();
             builder.RegisterType<AssessmentService>().As<IAssessmentService>();
             builder.RegisterType<Starter>();
 
